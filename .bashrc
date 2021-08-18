@@ -29,9 +29,10 @@ export HISTFILE="$XDG_DATA_HOME/bash/history"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/pythonrc"
 
+startx_alias_path=${HOME}/.local/bin/startx-alias
 # aliases
-alias sx="${HOME}/progs/startx-alias/run.sh"
-alias startx="${HOME}/progs/startx-alias/reset.sh; sx"
+alias sx="${startx_alias_path}/run.sh"
+alias startx="${startx_alias_path}/reset.sh; sx"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias scipio="sx w b"
 alias ls='ls --color=auto'
@@ -63,4 +64,4 @@ export LD_LIBRARY_PATH=$GTEST_HOME/lib:$LD_LIBRARY_PATH
 # XDG Base Directory Specification or I don't have
 # patience to make them save their files in the proper 
 # directory
-${HOME}/.local/bin/clear-home-dir.sh
+${HOME}/.local/bin/clear_home_dir.sh
