@@ -1,0 +1,32 @@
+wifi_home() { wifi home; }
+
+startx_alias_run() {
+	declare q
+	[ -f ${HOME}/progs/startx-alias/"$1".cx ] && \
+	q=$(<${HOME}/progs/startx-alias/"$1".cx) && \
+	[ $q == 1 ] && "$2" &
+}
+
+# background programs
+#xbindkeys & # -f "$XDG_CONFIG_HOME"/xbindkeys/config/xbindkeysrc &
+sxhkd &
+dwmbar &
+
+# TODO find category
+autostart &
+modkbrd.sh &
+setuphome.sh &
+
+startx_alias_run "web" "wifi_home"
+startx_alias_run "browser" "${BROWSER}"
+startx_alias_run "torrent" "qbittorrent"
+
+# setup for dwm log
+[ -d ~/.config/dwm ] || mkdir -p ${XDG_CACHE_HOME}/dwm
+
+# restart dwm by Super + Shift + q instead of quitting it
+while true ; do
+    dbus-launch dwm 2>&1 > ${XDG_CACHE_HOME}/dwm/dwm.log    
+done
+
+# exec dwm

@@ -1,0 +1,23 @@
+super + shift + Return
+	st
+
+F9
+	refbar
+
+super + shift + l
+	slock
+
+super + shift + x
+	dmenu_logout.sh
+
+super + shift + w
+	flameshot gui
+
+XF86AudioRaiseVolume
+	amixer set Master 2dB+ unmute; refbar;
+
+XF86AudioLowerVolume
+	amixer set Master 2dB- unmute; refbar;
+
+XF86AudioMute
+	amixer set Master toggle; refbar;
