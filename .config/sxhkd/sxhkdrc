@@ -2,7 +2,7 @@ super + shift + Return
 	st
 
 F9
-	refbar
+	refbar.sh
 
 super + shift + l
 	slock
@@ -14,10 +14,10 @@ super + shift + w
 	flameshot gui
 
 XF86AudioRaiseVolume
-	amixer set Master 2dB+ unmute; refbar;
+	amixer set Master 2dB+ unmute; refbar.sh;
 
 XF86AudioLowerVolume
-	amixer set Master 2dB- unmute; refbar;
+	amixer set Master 2dB- unmute; refbar.sh;
 
 XF86AudioMute
-	amixer set Master toggle; refbar;
+	amixer set Master toggle; refbar.sh;
