@@ -1,6 +1,6 @@
 #!/bin/bash
 
-action="$(printf "Kill Xorg\nSuspend\nPoweroff\nReboot" | dmenu -i -p 'System')"
+action="$(printf "Poweroff\nSuspend\nKill Xorg\nReboot" | dmenu -i -p 'System')"
 [ -n "$action" ] || exit 1
 
 confirm="$(printf "Yes\nNo" | dmenu -i -p "Confirm ${action}?")"
@@ -9,9 +9,9 @@ confirm="$(printf "Yes\nNo" | dmenu -i -p "Confirm ${action}?")"
 [ $confirm = "No" ] && exit 1
 
 case "$action" in
-    "Kill Xorg") killall xinit;;
-	"Suspend") systemctl suspend;;
     "Poweroff") poweroff;;
+	"Suspend") systemctl suspend;;
+    "Kill Xorg") killall xinit;;
     "Reboot") reboot
 esac
 
