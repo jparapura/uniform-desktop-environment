@@ -30,7 +30,7 @@ dwmbar.sh &
 
 # start programs specified in $ sx
 
-wifi_home() { wifi home; }
+wifi_home() { wifi.sh home; }
 
 startx_alias_path=${HOME}/.local/bin/startx-alias
 
