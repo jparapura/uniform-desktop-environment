@@ -6,7 +6,7 @@ Usage: $0 [options]
 
 Options:
 	w		 open with web
-	b		 open with Brave browser
+	b		 open with ${BROWSER} browser
 	t		 open with qBittorrent
 	scipio	 start with whatever is considered as default start
 USAGE
