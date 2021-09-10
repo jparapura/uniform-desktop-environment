@@ -6,14 +6,12 @@
 
 config_version: 2
 settings:
-  auto_save.session:
-    global: true
   bindings.commands:
     global:
       normal:
-        xb: config-cycle statusbar.show always in-mode
-        xx: config-cycle tabs.show always switching
+        xb: config-cycle statusbar.show always never
+        xt: config-cycle tabs.show always switching
   statusbar.show:
-    global: in-mode
+    global: never
   tabs.show:
     global: switching
