@@ -7,7 +7,7 @@
 sxhkd &
 
 # wallpaper
-feh --bg-scale ~/.config/wallpaper.png
+feh --bg-scale ${XDG_CONFIG_HOME}/wallpaper.png
 
 # turn off touchpad
 xinput disable "SynPS/2 Synaptics TouchPad" &
