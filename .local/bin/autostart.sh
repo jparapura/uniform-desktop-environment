@@ -14,6 +14,7 @@ xinput disable "SynPS/2 Synaptics TouchPad" &
 
 # transparency for terminal
 xcompmgr -c &
+fix_st_transparency.sh &
 
 # turn on slock after 10 minutes of inactivity
 xautolock -time 10 -locker slock &
