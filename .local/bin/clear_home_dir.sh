@@ -15,3 +15,4 @@ remove_file .fehbg
 remove_dir .pki
 remove_dir .gnupg
 remove_dir .mozilla
+exit 0
