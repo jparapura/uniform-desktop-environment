@@ -56,7 +56,7 @@ alias sudo="echo \"Use doas instead of sudo. If you REALLY need to use sudo, use
 
 # shortcut functions
 # TODO add all important folders
-se() { du -a ~/.local/bin ~/.config/{fontconfig,git,sxhkd,tmux,X11,zathura} ~/progs/suckless/{dmenu,dwm,slock,st}/*.{c,h} | awk '{print $2}' | fzf | xargs -or $EDITOR ;}
+se() { du -a ~/.local/bin ~/.config/{fontconfig,git,sxhkd,tmux,qutebrowser,X11,zathura} ~/.local/src/{dmenu,dwm,slock,st}/*.{c,h} | awk '{print $2}' | fzf | xargs -or $EDITOR ;}
 
 # for reloading .vimrc with keyboard shortcut
 # TODO change this path
