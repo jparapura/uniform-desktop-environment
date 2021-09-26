@@ -9,7 +9,18 @@
 set -o vi
 
 # PS1='[\u@\h \W]\$ '
-PS1='$ '
+# PS1='$ '
+PROMPT_COMMAND=__prompt_command    			# Function to generate PS1 after CMDs
+__prompt_command() {
+	local exit="$?"
+	PS1=""
+
+	local RCol='\[\e[0m\]'
+	local Red='\[\e[0;91m\]'
+
+	[[ $exit != 0 ]] && PS1+="${Red}${exit}${RCol} "
+	PS1+="$ "
+}
 
 export PATH=${PATH}:/home/me/.local/bin
 
