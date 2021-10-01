@@ -14,6 +14,7 @@ case "$1" in
     "home") name="TELPOL-21888";;
     "gosia") name="ZTE_589D20";;
     "css2") name="EXT_CSS2";;
+    "phone") name="iPhone-hotspot";;
     *) name="$1";;
 esac
 
