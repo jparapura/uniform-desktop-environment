@@ -1,2 +1,5 @@
 # copy selected text to the system clipboard
 set selection-clipboard clipboard
+
+# allows for opening links in the browser
+set sandbox none
