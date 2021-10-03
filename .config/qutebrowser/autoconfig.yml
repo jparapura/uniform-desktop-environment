@@ -11,9 +11,17 @@ settings:
   bindings.commands:
     global:
       normal:
-        xb: config-cycle statusbar.show always never
+        xb: config-cycle statusbar.show always in-mode
         xt: config-cycle tabs.show always switching
   statusbar.show:
-    global: never
+    global: in-mode
   tabs.show:
     global: always
+  url.searchengines:
+    global:
+      DEFAULT: https://searx.bar/search?q={}
+      d: https://www.duckduckgo.com/?q={}
+      g: https://www.google.com/search?q={}
+      gm: https://www.google.com/maps/search/{}
+      yt: https://www.youtube.com/results?search_query={}
+      aw: https://wiki.archlinux.org/index.php?search={}
