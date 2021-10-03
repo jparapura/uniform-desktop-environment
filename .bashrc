@@ -42,6 +42,7 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/pythonrc"
 
 startx_alias_path=${HOME}/.local/bin/startx-alias
 # aliases
+# TODO move to aliasrc file
 alias sx="${startx_alias_path}/run.sh"
 alias startx="${startx_alias_path}/reset.sh; sx"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -53,6 +54,8 @@ alias v="vim"
 alias m="make"
 alias ka="killall"
 alias sudo="echo \"Use doas instead of sudo. If you REALLY need to use sudo, use \\sudo\""
+alias sshwmii="ssh stud.matinf.uj.edu.pl -l z1154288"
+alias cfb="vim ~/.bashrc"
 
 # shortcut functions
 # TODO add all important folders
