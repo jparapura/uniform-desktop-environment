@@ -12,7 +12,11 @@ settings:
     global:
       normal:
         xb: config-cycle statusbar.show always in-mode
+        xd: download-clear
         xt: config-cycle tabs.show always switching
+  content.notifications.enabled:
+    https://teams.microsoft.com: true
+    https://www.netflix.com: false
   statusbar.show:
     global: in-mode
   tabs.show:
@@ -20,8 +24,8 @@ settings:
   url.searchengines:
     global:
       DEFAULT: https://searx.bar/search?q={}
+      aw: https://wiki.archlinux.org/index.php?search={}
       d: https://www.duckduckgo.com/?q={}
       g: https://www.google.com/search?q={}
       gm: https://www.google.com/maps/search/{}
       yt: https://www.youtube.com/results?search_query={}
-      aw: https://wiki.archlinux.org/index.php?search={}
