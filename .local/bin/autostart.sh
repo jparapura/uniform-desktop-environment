@@ -6,6 +6,9 @@
 # hotkey daemon
 sxhkd &
 
+# notification server
+dunst &
+
 # wallpaper
 feh --bg-scale ${XDG_CONFIG_HOME}/wallpaper.png
 
