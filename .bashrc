@@ -22,7 +22,7 @@ __prompt_command() {
 	PS1+="$ "
 }
 
-export PATH=${PATH}:/home/me/.local/bin
+export PATH=${PATH}:/home/${LOGNAME}/.local/bin
 
 # default programs:
 export EDITOR="vim"
