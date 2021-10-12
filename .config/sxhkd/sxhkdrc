@@ -4,6 +4,9 @@ super + shift + Return
 F9
 	refbar.sh
 
+super + shift + y
+	sxiv ~/office/pics/timetable.png &
+
 super + shift + l
 	slock
 
