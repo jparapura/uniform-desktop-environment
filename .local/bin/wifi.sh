@@ -17,6 +17,7 @@ case "$1" in
     "gosia") name="ZTE_589D20";;
     "css2") name="EXT_CSS2";;
     "phone") name="iPhone-hotspot";;
+    "m16") name="Mieszkanie16";;
 	"uj")
 		helper="wpa_supplicant"
 		name="uj_wifi.conf"
@@ -28,16 +29,20 @@ case "$helper" in
 	"netctl")
 		sudo ip link set "$interface" down
 		cd "/etc/netctl"
+		doas systemctl start NetworkManager
+		doas systemctl stop dhcpcd
 		sudo netctl stop "$name"
 		sudo netctl start "$name"
-		# TODO consider changing to cd -
 		cd "$HOME"
 	;;
 	"wpa_supplicant")
 		cd "/etc/wpa_supplicant"
+		doas systemctl stop NetworkManager
+		doas systemctl start dhcpcd
 		doas killall wpa_supplicant
 		doas wpa_supplicant -i "$interface" -c "$name"
-		cd -
+		#doas wpa_supplicant -D nl80211 -i "$interface" -c "$name"
+		cd "$HOME"
 	;;
 	*)
 		echo "Unknown helper!"
