@@ -67,6 +67,8 @@ export LD_LIBRARY_PATH=$GTEST_HOME/lib:$LD_LIBRARY_PATH
 # directory
 ${HOME}/.local/bin/clear_home_dir.sh
 
+# commands written with space at the beginning are not saved in history
+export HISTCONTROL="ignorespace"
 
 # fix for Android Studio showing up as a blank window
 export _JAVA_AWT_WM_NONREPARENTING=1
