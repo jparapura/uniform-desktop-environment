@@ -1,0 +1,19 @@
+startx_alias_path=${HOME}/.local/bin/startx-alias
+# aliases
+# TODO move to aliasrc file
+alias sx="${startx_alias_path}/run.sh"
+alias startx="${startx_alias_path}/reset.sh; sx"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias scipio="sx w b"
+alias ls='ls --color=auto'
+alias l='ls'
+alias sl='ls'
+alias v="vim"
+alias sv="doas vim"
+alias m="make"
+alias ka="killall"
+alias sudo="echo \"Use doas instead of sudo. If you REALLY need to use sudo, use \\sudo\""
+alias sshwmii="ssh stud.matinf.uj.edu.pl -l z1154288"
+alias cfb="vim ~/.bashrc"
+alias colpdf="cd ~/office/docs/college; ls"
+alias docker="doas docker"
