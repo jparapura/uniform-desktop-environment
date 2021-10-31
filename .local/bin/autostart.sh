@@ -10,7 +10,8 @@ sxhkd &
 dunst &
 
 # wallpaper
-feh --bg-scale ${XDG_CONFIG_HOME}/wallpaper.png
+set_random_wallpaper.sh &
+#feh --bg-scale ${XDG_CONFIG_HOME}/wallpaper.png
 
 # turn off touchpad
 xinput disable "SynPS/2 Synaptics TouchPad" &
