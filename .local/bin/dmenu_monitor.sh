@@ -25,4 +25,4 @@ esac
 
 
 # reset wallpaper
-feh --bg-scale ${XDG_CONFIG_HOME}/wallpaper.png
+wal -R
