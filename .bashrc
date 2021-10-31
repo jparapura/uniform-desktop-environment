@@ -66,3 +66,12 @@ export LD_LIBRARY_PATH=$GTEST_HOME/lib:$LD_LIBRARY_PATH
 # patience to make them save their files in the proper 
 # directory
 ${HOME}/.local/bin/clear_home_dir.sh
+
+
+# fix for Android Studio showing up as a blank window
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
