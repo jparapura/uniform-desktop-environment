@@ -11,9 +11,17 @@ settings:
   bindings.commands:
     global:
       normal:
+        ',M': hint links spawn mpv --ytdl-format='mp4[height<=360]+bestaudio' --script-opts=ytdl_hook-ytdl_path=/home/me/yt-dlp/yt-dlp
+          {hint-url}
         xb: config-cycle statusbar.show always in-mode
         xd: download-clear
         xt: config-cycle tabs.show always switching
+  content.desktop_capture:
+    https://teams.microsoft.com: true
+  content.geolocation:
+    https://www.medonet.pl: false
+  content.media.audio_capture:
+    https://teams.microsoft.com: true
   content.notifications.enabled:
     https://teams.microsoft.com: true
     https://www.netflix.com: false
