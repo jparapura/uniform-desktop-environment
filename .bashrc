@@ -40,13 +40,13 @@ export HISTFILE="$XDG_DATA_HOME/bash/history"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/pythonrc"
 
-if [ -f ${XDG_CONFIG_HOME}/bash/bash_aliases ]; then
-    source ${XDG_CONFIG_HOME}/bash/bash_aliases
+if [ -f ${XDG_CONFIG_HOME}/shell/aliasrc ]; then
+    source ${XDG_CONFIG_HOME}/shell/aliasrc
 fi
 
 # shortcut functions
 # TODO add all important folders
-se() { du -a ~/.local/bin ~/.config/{fontconfig,git,sxhkd,tmux,qutebrowser,X11,zathura} ~/.local/src/{dmenu,dwm,slock,st}/*.{c,h} | awk '{print $2}' | fzf | xargs -or $EDITOR ;}
+se() { du -a ~/.local/bin ~/.config/{fontconfig,git,shell,sxhkd,tmux,qutebrowser,X11,zathura} ~/.local/src/{dmenu,dwm,slock,st}/*.{c,h} | awk '{print $2}' | fzf | xargs -or $EDITOR ;}
 
 # for reloading .vimrc with keyboard shortcut
 # TODO change this path
