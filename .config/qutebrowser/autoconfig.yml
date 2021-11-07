@@ -31,9 +31,10 @@ settings:
     global: always
   url.searchengines:
     global:
-      DEFAULT: https://searx.bar/search?q={}
+      DEFAULT: https://www.google.com/search?q={}
       aw: https://wiki.archlinux.org/index.php?search={}
       d: https://www.duckduckgo.com/?q={}
       g: https://www.google.com/search?q={}
+      s: https://searx.bar/search?q={}
       gm: https://www.google.com/maps/search/{}
       yt: https://www.youtube.com/results?search_query={}
