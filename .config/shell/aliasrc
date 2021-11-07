@@ -1,6 +1,4 @@
 startx_alias_path=${HOME}/.local/bin/startx-alias
-# aliases
-# TODO move to aliasrc file
 alias sx="${startx_alias_path}/run.sh"
 alias startx="${startx_alias_path}/reset.sh; sx"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
