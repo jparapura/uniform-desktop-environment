@@ -16,6 +16,9 @@ super + shift + x
 super + shift + w
 	flameshot gui
 
+super + shift + e
+	flameshot full -p ~/tmp
+
 XF86AudioRaiseVolume
 	amixer set Master 2dB+ unmute; refbar.sh;
 

@@ -20,6 +20,9 @@ xinput disable "SynPS/2 Synaptics TouchPad" &
 xcompmgr -c &
 fix_st_transparency.sh &
 
+# screenshot utility
+flameshot &
+
 # turn on slock after 10 minutes of inactivity
 xautolock -time 10 -locker slock &
 
