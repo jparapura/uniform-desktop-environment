@@ -35,7 +35,13 @@ dwmbar.sh &
 
 # start programs specified in $ sx
 
+# TODO that is no longer used
 wifi_home() { wifi.sh home; }
+
+turn_on_secondary_display() { 
+	xrandr --output LVDS-1 --off --output DP-2 --mode 1920x1080;
+	wal -R;
+}
 
 startx_alias_path=${HOME}/.local/bin/startx-alias
 
@@ -46,7 +52,10 @@ startx_alias_run() {
 	[ $q == 1 ] && "$2" &
 }
 
+# TODO that is no longer used
 startx_alias_run "web" "wifi_home"
+
 startx_alias_run "browser" "${BROWSER}"
 startx_alias_run "torrent" "qbittorrent"
+startx_alias_run "secondaryScreen" "turn_on_secondary_display"
 
