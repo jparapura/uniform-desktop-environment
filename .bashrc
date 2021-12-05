@@ -46,7 +46,7 @@ fi
 
 # shortcut functions
 # TODO add all important folders
-se() { du -a ~/.local/bin ~/.config/{fontconfig,git,shell,sxhkd,tmux,qutebrowser,X11,zathura} ~/.local/src/{dmenu,dwm,slock,st}/*.{c,h} | awk '{print $2}' | fzf | xargs -or $EDITOR ;}
+se() { du -a ~/.local/bin ~/.config/{fontconfig,ghci,git,shell,sxhkd,tmux,qutebrowser,X11,zathura} ~/.local/src/{dmenu,dwm,slock,st}/*.{c,h} | awk '{print $2}' | fzf | xargs -or $EDITOR ;}
 
 # for reloading .vimrc with keyboard shortcut
 # TODO change this path
