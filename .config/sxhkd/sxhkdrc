@@ -8,7 +8,7 @@ super + shift + y
 	sxiv ~/office/pics/timetable.png &
 
 super + shift + l
-	slock
+	sleep 1; xset dpms force off; slock
 
 super + shift + x
 	dmenu_logout.sh
