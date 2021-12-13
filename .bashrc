@@ -77,3 +77,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+# pomodoro timer CLI by totanya24
+[[ -s "$HOME/.local/bin/pomo.sh" ]] && source "$HOME/.local/bin/pomo.sh"
