@@ -17,15 +17,24 @@ Plug 'udalov/kotlin-vim'
 call plug#end()
 
 
+" show existing tab with 4 spaces width
 set tabstop=4
+
+" when indenting with '>', use 4 spaces width
 set shiftwidth=4
-set noexpandtab
+
+" on pressing tab, insert 4 spaces
+set expandtab
+
+" apply the indentation of the current line to the next 
 set autoindent
+
+" react to the syntax/style of the code
 set smartindent
 
 " Makes white text under white highlight visible
 highlight Visual cterm=none ctermbg=darkgrey ctermfg=cyan
-" set background=dark
+
 
 " for quicker reloading .vimrc
 let mapleader = "\<Space>"
