@@ -40,6 +40,15 @@ highlight Visual cterm=none ctermbg=darkgrey ctermfg=cyan
 let mapleader = "\<Space>"
 nnoremap <leader>rv :source $MYVIMRC<CR>
 
+
+" Search down into subfolders
+set path+=**
+
+" Display all matching files when using tab complete
+set wildmenu
+
+
+
 " Rest is copied from MIT Missing Semester's basic vim config file
 
 " Comments in Vimscript start with a `"`.
