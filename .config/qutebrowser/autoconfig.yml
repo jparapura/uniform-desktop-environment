@@ -24,6 +24,7 @@ settings:
     https://teams.microsoft.com: true
   content.notifications.enabled:
     https://teams.microsoft.com: true
+    https://www.filmweb.pl: false
     https://www.netflix.com: false
   statusbar.show:
     global: in-mode
