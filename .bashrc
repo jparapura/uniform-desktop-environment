@@ -81,3 +81,12 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # pomodoro timer CLI by totanya24
 [[ -s "$HOME/.local/bin/pomo.sh" ]] && source "$HOME/.local/bin/pomo.sh"
+
+
+function c() {
+	if [ $# -ne 1 ]; then
+		echo "Usage: c <directory name>"
+		exit 1
+	fi
+	cd $1 && ls
+}
