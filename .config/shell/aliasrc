@@ -17,3 +17,9 @@ alias colpdf="cd ~/office/docs/college; ls"
 alias docker="doas docker"
 alias ls-no-links="ls -la | grep \"^[^l]\""
 alias dragme="pcmanfm . &"
+
+# android
+alias emu-run="emulator -avd \"my_avd_24\" &"
+alias emu-reset="emulator -avd \"my_avd_24\" -no-snapshot-load &"
+alias emu-install="adb install -r app/build/outputs/apk/debug/app-debug.apk"
+alias andbld="./gradlew build && emu-install"
