@@ -27,7 +27,7 @@ export PATH=${PATH}:/home/${LOGNAME}/.local/bin
 # default programs:
 export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="qutebrowser"
+export BROWSER="brave"
 
 # declutter home directory
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
