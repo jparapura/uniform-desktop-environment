@@ -13,6 +13,12 @@ super + shift + l
 super + shift + x
 	dmenu_logout.sh
 
+super + shift + semicolon
+    dunstctl action 0
+
+super + shift + slash
+    dunstctl close
+
 super + shift + w
 	flameshot gui
 
