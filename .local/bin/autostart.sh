@@ -3,6 +3,10 @@
 
 #!/bin/bash
 
+# set correct DPI
+[[ -f ~/.config/X11/Xresources ]] && xrdb -merge -I$HOME ~/.config/X11/Xresources
+
+
 # hotkey daemon
 sxhkd &
 
