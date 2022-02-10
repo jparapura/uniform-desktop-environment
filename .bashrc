@@ -87,6 +87,15 @@ function c() {
 	if [ $# -ne 1 ]; then
 		echo "Usage: c <directory name>"
 		exit 1
+        # TODO incorrect use causes st to terminate
 	fi
 	cd $1 && ls
+}
+
+function mcdir() {
+	if [ $# -ne 1 ]; then
+		echo "Usage: mcdir <directory name>"
+		exit 1
+	fi
+    mkdir -p $1 && cd $_
 }
