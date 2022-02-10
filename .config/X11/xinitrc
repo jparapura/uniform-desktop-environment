@@ -1,5 +1,7 @@
 autostart.sh &
 
+sleep 2
+
 # setup for dwm log
 [ -d ~/.config/dwm ] || mkdir -p ${XDG_CACHE_HOME}/dwm
 
@@ -10,3 +12,7 @@ done
 
 # quit dwm by Super + Shift + q
 # exec dwm
+
+# for AWM testing
+# source /home/me/homework/pz/A-Window-Manager/venv/bin/activate
+# exec python /home/me/homework/pz/wm.py > "awm.log"
