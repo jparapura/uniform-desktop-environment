@@ -6,8 +6,8 @@ sleep 2
 [ -d ~/.config/dwm ] || mkdir -p ${XDG_CACHE_HOME}/dwm
 
 # restart dwm by Super + Shift + q instead of quitting it
-while true ; do
-    dbus-launch dwm 2>&1 > ${XDG_CACHE_HOME}/dwm/dwm.log    
+while true; do
+    dwm 2> ${XDG_CACHE_HOME}/dwm/dwm.log
 done
 
 # quit dwm by Super + Shift + q
