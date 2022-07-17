@@ -19,11 +19,11 @@ super + shift + semicolon
 super + shift + slash
     dunstctl close
 
-super + shift + w
+Print
 	flameshot gui
 
-super + shift + e
-	flameshot full -p ~/tmp
+shift + Print
+	flameshot full -p ~/tmp/sss
 
 XF86AudioRaiseVolume
 	pactl set-sink-volume @DEFAULT_SINK@ +5%
