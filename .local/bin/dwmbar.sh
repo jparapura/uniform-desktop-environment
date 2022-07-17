@@ -31,10 +31,16 @@ internet() {
     fi
 }
 
-memory() {
+memory_percentage() {
     amt="$(printf %.0f $(free | awk '/^Pam/ {print $3 "/" $2 "*" 100}' | bc -l))"
 
     echo "mem=$amt%"
+}
+
+memory() {
+    amt=$(free -h | awk '/^Pam/ {print $3}')
+
+    echo $amt
 }
 
 
@@ -50,10 +56,10 @@ status2() {
 
 status() {
 	#echo " pid=$1$delim$(battery)$delim$(get_time) "
-	echo "$(battery)$delim$(get_time)"
+    echo "$(memory)$delim$(battery)$delim$(get_time)"
 }
 
-# TODO zrobić czytasnie liczby sekund po pierwszym uruchomienu
+# TODO zrobić czytanie liczby sekund po pierwszym uruchomienu
 # i na podstawie tego ustawić sleep, żeby dokładniej znać godzinę
 
 while :; do
