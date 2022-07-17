@@ -11,11 +11,38 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'udalov/kotlin-vim'
+Plug 'preservim/nerdtree'
+Plug 'mileszs/ack.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+
 
 " Initialize plugin system
 call plug#end()
 
+" NERDTree settings
+nmap <F5> :NERDTreeToggle<CR>
+
+" Open NERDTree automatically
+" autocmd VimEnter * NERDTree | wincmd p
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" CtrlP settings
+let g:ctrlp_map = '<c-t>'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" Ack settings
+nmap <C-f> :Ack 
+
+" Shortcutting split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+vnoremap <C-c> "+y
+inoremap <C-v> <Esc>"+P<Right>a
 
 " show existing tab with 4 spaces width
 set tabstop=4
