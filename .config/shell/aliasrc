@@ -6,6 +6,7 @@ alias scipio="sx w b"
 alias ls='ls --color=auto'
 alias l='ls'
 alias sl='ls'
+alias up='c ..'
 alias v="vim"
 alias sv="doas vim"
 alias m="make"
@@ -17,6 +18,8 @@ alias colpdf="cd ~/office/docs/college; ls"
 alias docker="doas docker"
 alias ls-no-links="ls -la | grep \"^[^l]\""
 alias dragme="pcmanfm . &"
+alias licencjat="nohup zathura egzamin_licencjacki_2021_numbered.pdf egzamin_licencjacki.pdf teoria.pdf praktyka.pdf &"
+alias presentation-show-keys="screenkey --ignore Down --ignore Up &"
 
 # android
 alias emu-run="emulator -avd \"my_avd_24\" &"
