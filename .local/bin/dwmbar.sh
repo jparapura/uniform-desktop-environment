@@ -5,58 +5,57 @@
 
 delim=" "
 
-get_time() {
-    #echo $(date +"[%a %e.%m %H:%M]")
-    echo $(date +"%H:%M")
+current_time() {
+    #display $(date +"[%a %e.%m %H:%M]")
+    display $(date +"%H:%M")
 }
 
 battery() {
     amt="$(cat /sys/class/power_supply/BAT0/capacity)"
 
-    #echo "btr=$amt%"
-	if [ -z "$amt" ]
-	then
-		echo ""
-	else
-		echo "$amt%"
-	fi
+    #display "btr=$amt%"
+    [ -z "$amt" ] && display ""
+    [ ! -z "$amt" ] && display "$amt%"
 }
 
 internet() {
     status=$(cat /sys/class/net/wlp3s0/operstate)
-    if [[ $status = "up" ]]; then
-        echo "web=on"
-    else
-        echo "web=off"
-    fi
+    [[ $status = "up" ]] && display "web=on"
+    [[ ! $status = "up" ]] && display "web=off"
 }
 
 memory_percentage() {
     amt="$(printf %.0f $(free | awk '/^Pam/ {print $3 "/" $2 "*" 100}' | bc -l))"
 
-    echo "mem=$amt%"
+    display "mem=$amt%"
 }
 
 memory() {
     amt=$(free -h | awk '/^Pam/ {print $3}')
 
-    echo $amt
+    display $amt
 }
 
 
 cpu_temp() {
     amt="$(printf $(sensors | awk '/^temp1/ {print $2}'))"
 
-    echo "temp=$amt"
+    display "temp=$amt"
 }
 
-status2() {
-    echo " pid=$1$delim$(internet)$delim$(memory)$delim$(cpu_temp)$delim$(battery)$delim$(get_time) "
+add_to_statusbar() {
+    $1
+    [ -z $2 ] && display "$delim"
+}
+
+display() {
+    echo -n "$1"
 }
 
 status() {
-	#echo " pid=$1$delim$(battery)$delim$(get_time) "
-    echo "$(memory)$delim$(battery)$delim$(get_time)"
+    add_to_statusbar memory
+    add_to_statusbar battery
+    add_to_statusbar current_time "end"
 }
 
 # TODO zrobić czytanie liczby sekund po pierwszym uruchomienu
@@ -67,7 +66,6 @@ while :; do
     pid=$!
     cd ~/.local/bin/
     echo "$pid" > sleepPid
-    #xsetroot -name "$(status2 $pid)"   
     xsetroot -name "$(status)"   
     wait $pid
 done
