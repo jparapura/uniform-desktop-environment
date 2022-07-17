@@ -10,16 +10,17 @@ set -o vi
 
 # PS1='[\u@\h \W]\$ '
 # PS1='$ '
-PROMPT_COMMAND=__prompt_command    			# Function to generate PS1 after CMDs
+PROMPT_COMMAND=__prompt_command   # Function to generate PS1 after CMDs
 __prompt_command() {
-	local exit="$?"
-	PS1=""
+    local exit="$?"
+    PS1=""
 
-	local RCol='\[\e[0m\]'
-	local Red='\[\e[0;91m\]'
+    local RCol='\[\e[0m\]'
+    local Red='\[\e[0;91m\]'
 
-	[[ $exit != 0 ]] && PS1+="${Red}${exit}${RCol} "
-	PS1+="$ "
+    [[ $exit != 0 ]] && PS1+="${Red}${exit}${RCol} "
+    PS1+="$ "
+    # PS1+="[\u@\h \W]\$ "
 }
 
 export PATH=${PATH}:/home/${LOGNAME}/.local/bin
@@ -84,18 +85,18 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 
 function c() {
-	if [ $# -ne 1 ]; then
-		echo "Usage: c <directory name>"
-		exit 1
+    if [ $# -ne 1 ]; then
+        echo "Usage: c <directory name>"
+        exit 1
         # TODO incorrect use causes st to terminate
-	fi
-	cd $1 && ls
+    fi
+    cd $1 && ls
 }
 
 function mcdir() {
-	if [ $# -ne 1 ]; then
-		echo "Usage: mcdir <directory name>"
-		exit 1
-	fi
+    if [ $# -ne 1 ]; then
+        echo "Usage: mcdir <directory name>"
+        exit 1
+    fi
     mkdir -p $1 && cd $_
 }
