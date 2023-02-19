@@ -1,0 +1,12 @@
+[Default Applications]
+text/plain=nvim.desktop
+x-scheme-handler/webcal=brave-browser.desktop
+x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/mailto=brave-browser.desktop
+application/pdf=org.pwmt.zathura.desktop
+image/jpeg=sxiv.desktop
+image/png=sxiv.desktop
+
+[Added Associations]
+application/zip=code-oss.desktop;
