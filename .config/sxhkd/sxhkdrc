@@ -1,5 +1,11 @@
+super + o
+    dmenu_run
+
+super + p
+    rofi -show drun
+
 super + shift + Return
-	st
+    alacritty
 
 F9
 	refbar.sh
@@ -19,11 +25,20 @@ super + shift + semicolon
 super + shift + slash
     dunstctl close
 
+super + shift + period
+    kill -s SIGUSR1 $(pgrep 202020d) 
+
+super + shift + f
+    xdg-open "$(getConfigFiles.sh | rofi -threads 0 -width 100 -dmenu -i -p "locate:")"
+    
 Print
 	flameshot gui
 
 shift + Print
 	flameshot full -p ~/tmp/sss
+
+super + c
+    rofi -show calc -modi calc -no-show-match -no-sort
 
 XF86AudioRaiseVolume
 	pactl set-sink-volume @DEFAULT_SINK@ +5%

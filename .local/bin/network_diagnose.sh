@@ -11,7 +11,7 @@ ping -c 4 8.8.8.8 &> /dev/null
 echo "Success."
 
 echo "Trying to resolve domain names."
-ping -c 4 8.8.8.8 &> /dev/null
+ping -c 4 gnu.org &> /dev/null
 [ $? -ne 0 ] && echo "Failed." && exit 1
 echo "Success."
 

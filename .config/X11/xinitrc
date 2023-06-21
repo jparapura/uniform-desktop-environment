@@ -4,16 +4,19 @@ sleep 2
 
 # === dwm section ===
 # setup for dwm log
-[ -d ~/.config/dwm ] || mkdir -p ${XDG_CACHE_HOME}/dwm
+# [ -d ~/.config/dwm ] || mkdir -p ${XDG_CACHE_HOME}/dwm
 
 # restart dwm by Super + Shift + q instead of quitting it
-while true; do
-    dwm 2> ${XDG_CACHE_HOME}/dwm/dwm.log
-done
+# while true; do
+#     dwm 2> ${XDG_CACHE_HOME}/dwm/dwm.log
+# done
 
 # quit dwm by Super + Shift + q
 # exec dwm
 
+
+# === i3 section ===
+exec i3
 
 # === xmonad section ===
 # exec xmonad

@@ -7,19 +7,41 @@ alias ls='ls --color=auto'
 alias l='ls'
 alias sl='ls'
 alias up='c ..'
-alias v="vim"
-alias sv="doas vim"
+alias v="nvim"
+alias sv="doas nvim"
 alias m="make"
 alias ka="killall"
 alias sudo="echo \"Use doas instead of sudo. If you REALLY need to use sudo, use \\sudo\""
-alias sshwmii="ssh stud.matinf.uj.edu.pl -l z1154288"
-alias cfb="vim ~/.bashrc"
+alias cfb="v ~/.bashrc"
+alias cfv="v $MYVIMRC"
+alias cfxm="v ~/.xmonad/xmonad.hs"
 alias colpdf="cd ~/office/docs/college; ls"
 alias docker="doas docker"
 alias ls-no-links="ls -la | grep \"^[^l]\""
 alias dragme="pcmanfm . &"
+alias rr="ranger"
+alias p="bpython"
+alias python="bpython"
+alias xclip="xclip -selection clipboard"
 alias licencjat="nohup zathura egzamin_licencjacki_2021_numbered.pdf egzamin_licencjacki.pdf teoria.pdf praktyka.pdf &"
 alias presentation-show-keys="screenkey --ignore Down --ignore Up &"
+
+# ssh
+alias ssh-wmii="ssh stud.matinf.uj.edu.pl -l z1154288"
+alias ssh-arda="ssh arda.ksi.ii.uj.edu.pl -l jakub.parapura"
+alias ssh-tcs="ssh student.tcs.uj.edu.pl -l z1154288"
+
+# competitive programming
+alias oki="c ~/progs/cp-solutions/oki/"
+alias leet="c ~/progs/cp-solutions/leetcode/"
+alias cpcc="g++ sol.cpp -std=c++17 -ggdb -o prog.x"
+alias cpcco2="g++ sol.cpp -O2 -std=c++17 -ggdb -o prog.x"
+alias cpch="taucheck.py --timeout 2.0 -v ./prog.x tests/"
+alias cpchslow="taucheck.py --timeout 100.0 -v ./prog.x tests/"
+alias cpall="cpcc && cpch"
+alias satoricc="g++ -static -std=c++17 -ggdb -O2 -Wall sol.cpp -o prog.x"
+alias satoriall="satoricc && cpch"
+
 
 # android
 alias emu-run="emulator -avd \"my_avd_24\" &"

@@ -36,6 +36,7 @@ fi
 
 case "$1" in
 	"uj") name="uj_wifi.conf" ;;
+	"eduroam") name="eduroam.conf" ;;
 	"restore")
 		restore_for_networkmanager
 		exit 0

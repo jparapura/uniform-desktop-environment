@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Probably useless script
+
 # If you spawn st with alpha patch, first window is
 # transparent slightly less than expected. If you spawn
 # another st, then first window gets regular transparency

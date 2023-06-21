@@ -19,15 +19,18 @@ __prompt_command() {
     local Red='\[\e[0;91m\]'
 
     [[ $exit != 0 ]] && PS1+="${Red}${exit}${RCol} "
-    PS1+="$ "
+    # PS1+="\W > "
+    PS1+="\W $ "
+    # PS1+="$ "
+    # PS1+="[jp@\h \W]\$ "
     # PS1+="[\u@\h \W]\$ "
 }
 
-export PATH=${PATH}:/home/${LOGNAME}/.local/bin
+export PATH=${PATH}:/home/${LOGNAME}/.local/bin:/home/${LOGNAME}/.config/tint2/scripts
 
 # default programs:
-export EDITOR="vim"
-export TERMINAL="st"
+export EDITOR="nvim"
+export TERMINAL="alacritty"
 export BROWSER="brave"
 
 # declutter home directory
@@ -45,13 +48,23 @@ if [ -f ${XDG_CONFIG_HOME}/shell/aliasrc ]; then
     source ${XDG_CONFIG_HOME}/shell/aliasrc
 fi
 
+# Set up Node Version Manager
+source /usr/share/nvm/init-nvm.sh
+
 # shortcut functions
 # TODO add all important folders
-se() { du -a ~/.local/bin ~/.config/{fontconfig,ghci,git,shell,sxhkd,tmux,qutebrowser,X11,zathura} ~/.local/src/{dmenu,dwm,slock,st}/*.{c,h} | awk '{print $2}' | fzf | xargs -or $EDITOR ;}
+# TODO paths to separate variable
+se() { du -a ~/.local/bin ~/.config/{fontconfig,ghci,git,i3,i3status,shell,sxhkd,tmux,qutebrowser,X11,zathura} ~/.local/src/{dmenu,dwm,slock,st}/*.{c,h} | awk '{print $2}' | fzf | xargs -or $EDITOR ;}
+docf() { du -a /home/me/office/docs/college/ | awk '{print $2}' | grep .pdf | fzf | (xargs -r zathura &) ;}
+hwf() { c "$(find /home/me/homework/{asd1,asd2,iasd,ip,mn,p2,pf,pn,pwww,python,pz,rps,sem-kogni,to,zwpa} -type d | grep -v '.git\|venv\|lib\|bin\|node_modules\|build\|gradle\|share' | fzf)" ;}
+# TODO to jest w osobnym skrypcie w ~/.local/bin, stąd trzeba to usunąć
+getConfigFiles() { du -a /home/me/.local/bin /home/me/.config/{fontconfig,ghci,git,shell,sxhkd,tmux,qutebrowser,X11,zathura} /home/me/.local/src/{dmenu,dwm,slock,st}/*.{c,h} | awk '{print $2}' ;}
 
 # for reloading .vimrc with keyboard shortcut
 # TODO change this path
-export MYVIMRC="~/.vimrc"
+# export MYVIMRC="~/.vimrc"
+# export MYVIMRC="~/.config/nvim/init.lua"
+export MYVIMRC="~/.config/nvim/init.vim"
 
 # polish LC_NUMERIC sometimes causes printf to print "invalid number"
 export LC_NUMERIC="en_US.UTF-8"
@@ -100,3 +113,21 @@ function mcdir() {
     fi
     mkdir -p $1 && cd $_
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+        . "/usr/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
